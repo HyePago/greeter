@@ -1,4 +1,4 @@
-package kr.hs.emirim.rlagpwls9.main;
+package kr.hs.emirim.rlagpwls9.greeter.main;
 
 import kr.hs.emirim.rlagpwls9.greeter.greeter.Greeter;
 
@@ -11,5 +11,4 @@ public class Main {
 		String msg = greeter.greet("김나령"); //msg는 "스프링, 안녕하세요!"가 된다.
 		System.out.println(msg);
 	}
-
 }
