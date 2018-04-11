@@ -1,18 +1,22 @@
 package kr.hs.emirim.rlagpwls9.greeter.main;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
+import kr.hs.emirim.rlagpwls9.greeter.config.AppContext;
 import kr.hs.emirim.rlagpwls9.greeter.greeter.Greeter;
 
 public class Main {
 
 	public static void main(String[] args) {
-		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("classpath:applicationContext.xml");
+//		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("classpath:applicationContext.xml");
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppContext.class);
+		
 		Greeter g = ctx.getBean("greeter", Greeter.class);
-		Greeter g2 = ctx.getBean("greeter", Greeter.class);
+		Greeter g2 = ctx.getBean("greeter2", Greeter.class);
 		
 		if(g == g2) { // 두 가지 객체가 같은 객체인가?
-			System.out.println("같은 객체입니다."); // 이게 나옴
+			System.out.println("같은 객체입니다.");
 		} else {
 			System.out.println("다른 객체입니다.");
 		}
